@@ -1,0 +1,46 @@
+function shop_schema() {
+  
+  $schema = array();
+   
+  $schema['shop'] = array(
+    'description' => 'The base table for the information we want exposed to Views.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary key of the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'athor' => array(
+        'description' => 'A simple text field - athor.',
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ),
+      'name_book' => array(
+        'description' => 'text field - name_field',
+        'type' => 'varchar',
+        'length' => 150,
+        'not null' => TRUE,
+      ),
+        'price' => array(
+        'description' => 'A date stored as an decimal -price',
+        'type' => 'numeric', // Обязательно.
+        'unsigned' => TRUE, // По умолчанию FALSE.
+        'precision' => 6, // Значащие цифры.
+        'scale' => 2, // Цифры справа от десятичной точки.
+
+        'not null' => TRUE,
+      ),
+        'node_id' => array(
+        'description' => 'A Drupal node related to this record.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  
+  return $schema;
+}

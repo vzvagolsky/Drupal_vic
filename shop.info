@@ -1,0 +1,4 @@
+name = Shop
+description = Demo module for shop tables to Views
+core = 7.x
+files[] = /includes/views/shop_handler_field_shop_operations.inc
